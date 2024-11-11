@@ -10,7 +10,6 @@ export default function TabelaProdutos(props) {
 
     function excluirProduto(produto){
         if(window.confirm("Deseja realmente excluir o produto " + produto.descricao)){
-            //abordagem utilizando a sintaxe permitida da linguagem
             props.setListaDeProdutos(props.listaDeProdutos.filter(
                 (item)=>{
                             return item.codigo != produto.codigo     
@@ -26,6 +25,8 @@ export default function TabelaProdutos(props) {
             props.setListaDeProdutos(novaLista);*/
         }
     }
+
+
 
     return (
         <>
@@ -49,7 +50,7 @@ export default function TabelaProdutos(props) {
                     </thead>
                     <tbody>
                         {
-                            props.listaDeProdutos?.map((produto) => {
+                            props?.listaDeProdutos.map((produto) => {
                                 return (
                                     <tr>
                                         <td>{produto.codigo}</td>
